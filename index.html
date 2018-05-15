@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sorting algorithms</title>
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<style>
+	body {
+		background: #bbb;
+	}
+	pre {
+		border: 1px solid grey;
+		background: #ddd;
+	}
+</style>
+</head>
+<body>
+The following code is live in the console.
+<pre class="prettyprint">
+
+function insertionSort(arr) {
+	for (var i = 1; i < arr.length; i++) {
+		let currentVal = arr[i];
+		let j = i - 1;
+		while (j >= 0 && arr[j] > currentVal) {
+			arr[j + 1] = arr[j];
+			j = j - 1; 
+		}
+		arr[j + 1] = currentVal;
+	}
+	return arr
+}
+
+function mergeSort(arr) {
+	//TODO next
+}
+
+</pre>
+<script>
+	function insertionSort(arr) {
+		for (var i = 1; i < arr.length; i++) {
+			let currentVal = arr[i];
+			let j = i - 1;
+			while (j >= 0 && arr[j] > currentVal) {
+				arr[j + 1] = arr[j];
+				console.log(arr)
+				j = j - 1; 
+			}
+			arr[j + 1] = currentVal;
+			console.log(arr)
+		}
+		return arr
+	}
+		
+
+	function mergeSort(arr) {
+		//TODO next
+	}
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
