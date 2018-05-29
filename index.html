@@ -29,9 +29,27 @@
 	}
 		
 
-	function mergeSort(arr) {
-		//TODO next
-	}
+	function quickSort(arr) {
+  if (arr.length <= 1) {
+    return arr
+  } else if (arr.length == 2) {
+    let smaller = Math.min(arr[0], arr[1]);
+    let larger = Math.max(arr[0], arr[1]);
+    return [smaller, larger]
+  }
+  
+  let pivot = arr.shift();
+  let smallerVals = [];
+  let largerVals = [];
+  for (let i of arr) {
+    if (i < pivot) {
+      smallerVals.push(i)
+    } else {
+      largerVals.push(i)
+    }
+  }
+  return quickSort(smallerVals).concat(pivot, quickSort(largerVals))
+}
 
 
 </script>
