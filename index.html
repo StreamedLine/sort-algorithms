@@ -29,38 +29,35 @@
 	}
 		
 
-	function mergeSort(arr) {
-		function merge(arr1, arr2) {
-			let loopCounter = arr1.length + arr2.length;
-			const newArr = [];
-
-			arr1.push(Infinity);
-			arr2.push(Infinity);
-
-			while (loopCounter > 0) {
-				newArr.push(arr1[0] < arr2[0] ? arr1.shift() : arr2.shift()) 
-				loopCounter -= 1;
-			}
-
-			return newArr
+	function quickSort(arr) {
+		if (arr.length <= 1) {
+			return arr
+		} else if (arr.length == 2) {
+			let smaller = Math.min(arr[0], arr[1]);
+			let larger = Math.max(arr[0], arr[1]);
+			return [smaller, larger]
 		}
-		if (arr.length <= 1) {return arr }
-		
-		const newArr = [];
-		const leftHalf = arr.slice(0, Math.floor(arr.length/2));
-		const rightHalf = arr.slice(Math.floor(arr.length/2) + 1);
 
-		
+		let pivot = arr.shift();
+		let smallerVals = [];
+		let largerVals = [];
+		for (let i of arr) {
+			if (i < pivot) {
+			  smallerVals.push(i)
+			} else {
+			  largerVals.push(i)
+			}
+		}
+		return quickSort(smallerVals).concat(pivot, quickSort(largerVals))
 	}
-
 
 </script>
 <script>
-    let code = document.querySelector('#codeScript').innerText.split('\n');
-    if (code[0] === '') {
-        code.shift();
-    }
-    document.querySelector('#codeHTML').innerHTML = code.join('\n');
+	let code = document.querySelector('#codeScript').innerText.split('\n');
+	if (code[0] === '') {
+		code.shift();
+	}
+	document.querySelector('#codeHTML').innerHTML = code.join('\n');
 </script>
 </body>
 </html>
