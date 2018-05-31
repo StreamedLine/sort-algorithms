@@ -30,7 +30,27 @@
 		
 
 	function mergeSort(arr) {
-		//TODO next
+		function merge(arr1, arr2) {
+			let loopCounter = arr1.length + arr2.length;
+			const newArr = [];
+
+			arr1.push(Infinity);
+			arr2.push(Infinity);
+
+			while (loopCounter > 0) {
+				newArr.push(arr1[0] < arr2[0] ? arr1.shift() : arr2.shift()) 
+				loopCounter -= 1;
+			}
+
+			return newArr
+		}
+		if (arr.length <= 1) {return arr }
+		
+		const newArr = [];
+		const leftHalf = arr.slice(0, Math.floor(arr.length/2));
+		const rightHalf = arr.slice(Math.floor(arr.length/2) + 1);
+
+		
 	}
 
 
