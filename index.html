@@ -43,9 +43,9 @@
 		let largerVals = [];
 		for (let i of arr) {
 			if (i < pivot) {
-			  smallerVals.push(i)
+			 	smallerVals.push(i)
 			} else {
-			  largerVals.push(i)
+				largerVals.push(i)
 			}
 		}
 		return quickSort(smallerVals).concat(pivot, quickSort(largerVals))
